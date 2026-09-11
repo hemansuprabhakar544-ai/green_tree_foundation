@@ -1,0 +1,5 @@
+import { router } from "expo-router";
+import { Alert,Text } from "react-native";
+import { Button,Card,C,Screen,Title } from "../../src/ui";
+import { useStore } from "../../src/store";
+export default function More(){const {sites,resetDemo}=useStore();return <Screen><Title>More</Title><Card><Title small>Ward analytics</Title><Text style={{color:C.muted}}>Planning indicators from local survey data.</Text><Button onPress={()=>router.push("/analytics")}>Open analytics</Button></Card><Card><Title small>Reports & export</Title><Text style={{color:C.muted}}>Review survey counts and summary.</Text><Button onPress={()=>router.push("/reports")}>Open reports</Button></Card><Card><Title small>Settings</Title><Text style={{color:C.muted}}>Local app settings and demo controls.</Text><Button onPress={()=>router.push("/settings")}>Open settings</Button></Card><Card><Title small>About</Title><Text>{sites.length} local site records. Data stays on this device.</Text><Button secondary onPress={()=>Alert.alert("Reset demo data","Replace current local records with the bundled demo sites?",[{text:"Cancel"},{text:"Reset",onPress:resetDemo}])}>Reset demo data</Button></Card></Screen>}
