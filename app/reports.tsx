@@ -1,0 +1,4 @@
+import { Text } from "react-native";
+import { useStore } from "../src/store";
+import { Card,C,Screen,Title } from "../src/ui";
+export default function Reports(){const {sites}=useStore();const critical=sites.filter(s=>s.priority==="CRITICAL").length;const high=sites.filter(s=>s.priority==="HIGH").length;const area=sites.reduce((a,s)=>a+(s.area||0),0);return <Screen><Title>Reports</Title><Text style={{color:C.muted}}>Current survey summary.</Text><Card><Text style={{fontWeight:"800"}}>Sites surveyed</Text><Text style={{fontSize:28,fontWeight:"900",marginTop:6}}>{sites.length}</Text></Card><Card><Text style={{fontWeight:"800"}}>Priority sites</Text><Text style={{marginTop:6}}>{critical} critical · {high} high</Text></Card><Card><Text style={{fontWeight:"800"}}>Surveyed area</Text><Text style={{fontSize:24,fontWeight:"900",marginTop:6}}>{area.toLocaleString()} m²</Text></Card></Screen>}
