@@ -18,6 +18,11 @@
         "NSLocationWhenInUseUsageDescription": "GCN uses your location to capture survey coordinates and show your position on the map."
       }
     },
-    "web": { "bundler": "metro" }
+    "web": { "bundler": "metro" },
+    "extra": {
+      "eas": {
+        "projectId": "e3509fe5-77cb-41db-8c8e-05b1febf29b1"
+      }
+    }
   }
 }
