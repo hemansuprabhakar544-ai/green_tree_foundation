@@ -1,0 +1,5 @@
+import { useState } from "react";
+import { Text } from "react-native";
+import { SPECIES } from "../../src/data";
+import { Card,C,Input,Screen,Title } from "../../src/ui";
+export default function Species(){const [q,setQ]=useState("");const list=SPECIES.filter(s=>(s.common+" "+s.botanical+" "+s.origin).toLowerCase().includes(q.toLowerCase()));return <Screen><Title>Species Library</Title><Text style={{color:C.muted}}>Planting references for urban green infrastructure.</Text><Input value={q} onChangeText={setQ} placeholder="Search species" style={{marginTop:12}}/>{list.map(s=><Card key={s.common}><Text style={{fontSize:18,fontWeight:"800"}}>{s.common}</Text><Text style={{fontStyle:"italic",color:C.muted}}>{s.botanical}</Text><Text style={{marginTop:8}}>Origin: {s.origin} · Water: {s.water} · Heat: {s.heat}</Text><Text style={{marginTop:5}}>Road {s.road}/5 · Residential {s.residential}/5 · Lake {s.lake}/5</Text><Text style={{fontSize:12,color:C.muted,marginTop:6}}>{s.notes}</Text></Card>)}</Screen>}
