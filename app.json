@@ -1,0 +1,23 @@
+{
+  "expo": {
+    "name": "Green Coverage Network",
+    "slug": "green-coverage-network",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "gcn",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "plugins": ["expo-router", "expo-location"],
+    "android": {
+      "package": "com.gcn.ahmedabad",
+      "permissions": ["ACCESS_COARSE_LOCATION", "ACCESS_FINE_LOCATION"]
+    },
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "GCN uses your location to capture survey coordinates and show your position on the map."
+      }
+    },
+    "web": { "bundler": "metro" }
+  }
+}
