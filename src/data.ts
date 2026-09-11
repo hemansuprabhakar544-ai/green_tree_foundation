@@ -1,0 +1,26 @@
+export type Priority = "CRITICAL" | "HIGH" | "MODERATE" | "LOW";
+export type Site = {
+  id:string; name:string; surveyor:string; ward:string; zone:string; ownership:string; area:number|null; landUse:string; address:string;
+  latitude:number|null; longitude:number|null; intervention:string; priority:Priority; priorityScore:number; status:"draft"|"complete";
+  description:string; currentGreen:string; constraints:string; plantingType:string; maintenance:string; waterStrategy:string; responsibleAgency:string; createdAt:string;
+};
+export const WARDS=["Navrangpura","Vastrapur","Thaltej","Paldi","Ellisbridge","Maninagar","Naroda","Chandkheda","Danilimda","Bopal","Kalupur","Gota"];
+export const SPECIES=[
+{common:"Neem",botanical:"Azadirachta indica",origin:"Native",water:"Low",heat:"Very high",pollution:"High",road:4,residential:5,industrial:5,lake:3,notes:"Durable shade tree; verify local provenance."},
+{common:"Karanj",botanical:"Pongamia pinnata",origin:"Native",water:"Low",heat:"High",pollution:"High",road:4,residential:5,industrial:4,lake:4,notes:"Useful on dry urban soils and as a nitrogen-fixing tree."},
+{common:"Arjun",botanical:"Terminalia arjuna",origin:"Native",water:"Moderate",heat:"High",pollution:"Moderate",road:3,residential:4,industrial:3,lake:5,notes:"Strong choice for river and lake-edge planting."},
+{common:"Jamun",botanical:"Syzygium cumini",origin:"Native",water:"Moderate",heat:"High",pollution:"Moderate",road:3,residential:5,industrial:3,lake:5,notes:"Fruit supports birds; allow for fruit drop."},
+{common:"Peepal",botanical:"Ficus religiosa",origin:"Native",water:"Low",heat:"Very high",pollution:"High",road:2,residential:3,industrial:5,lake:4,notes:"Excellent ecological value; keep roots away from services and foundations."},
+{common:"Banyan",botanical:"Ficus benghalensis",origin:"Native",water:"Low–moderate",heat:"Very high",pollution:"High",road:1,residential:2,industrial:4,lake:4,notes:"Needs substantial space; high habitat and shade value."},
+{common:"Amaltas",botanical:"Cassia fistula",origin:"Native",water:"Low",heat:"High",pollution:"Moderate",road:5,residential:5,industrial:3,lake:2,notes:"Good avenue tree with seasonal yellow flowering."},
+{common:"Vetiver",botanical:"Chrysopogon zizanioides",origin:"Native",water:"Low–moderate",heat:"High",pollution:"High",road:3,residential:3,industrial:4,lake:5,notes:"Useful for embankment and soil stabilisation."},
+{common:"Siris",botanical:"Albizia lebbeck",origin:"Native",water:"Low",heat:"High",pollution:"High",road:3,residential:4,industrial:5,lake:2,notes:"Broad canopy and useful biodiversity value."},
+{common:"Bakul",botanical:"Mimusops elengi",origin:"Native",water:"Moderate",heat:"High",pollution:"Moderate",road:4,residential:5,industrial:2,lake:2,notes:"Good compound and avenue tree where space is moderate."},
+{common:"Khejri",botanical:"Prosopis cineraria",origin:"Native dryland",water:"Very low",heat:"Very high",pollution:"High",road:3,residential:4,industrial:4,lake:1,notes:"Strong option for hot, dry pockets."},
+{common:"Pilu",botanical:"Salvadora persica",origin:"Native dryland",water:"Very low",heat:"Very high",pollution:"High",road:3,residential:3,industrial:4,lake:2,notes:"Drought- and salt-tolerant western Indian species."}
+];
+export const DEMO_SITES:Site[]=[
+{id:"GCN-001",name:"Sabarmati River Edge — Paldi",surveyor:"GCN Demo",ward:"Paldi",zone:"West",ownership:"Municipal",area:4200,landUse:"River edge",address:"Paldi riverfront, Ahmedabad",latitude:23.006,longitude:72.570,intervention:"Riparian restoration",priority:"CRITICAL",priorityScore:92,status:"complete",description:"Riparian habitat and shade opportunity.",currentGreen:"Sparse edge vegetation",constraints:"High pedestrian pressure",plantingType:"Native riparian mix",maintenance:"Moderate",waterStrategy:"Rainwater + establishment irrigation",responsibleAgency:"Ahmedabad Municipal Corporation",createdAt:"2026-09-01"},
+{id:"GCN-002",name:"Vastrapur Lake Buffer",surveyor:"GCN Demo",ward:"Vastrapur",zone:"West",ownership:"Municipal",area:2800,landUse:"Lake edge",address:"Vastrapur Lake, Ahmedabad",latitude:23.039,longitude:72.529,intervention:"Lake-edge habitat",priority:"HIGH",priorityScore:78,status:"complete",description:"Edge habitat and shade network.",currentGreen:"Managed lawn",constraints:"Recreation pressure",plantingType:"Native lake-edge planting",maintenance:"Moderate",waterStrategy:"Treated water where available",responsibleAgency:"Ahmedabad Municipal Corporation",createdAt:"2026-09-02"},
+{id:"GCN-003",name:"Maninagar Heat-Priority Parcel",surveyor:"GCN Demo",ward:"Maninagar",zone:"South",ownership:"Municipal",area:1600,landUse:"Vacant parcel",address:"Maninagar, Ahmedabad",latitude:22.996,longitude:72.602,intervention:"Micro-forest",priority:"HIGH",priorityScore:81,status:"complete",description:"Dense green intervention in a heat-priority pocket.",currentGreen:"Bare soil",constraints:"Limited water",plantingType:"Dense native micro-forest",maintenance:"Low",waterStrategy:"Rainwater harvesting",responsibleAgency:"Ahmedabad Municipal Corporation",createdAt:"2026-09-03"}
+];
