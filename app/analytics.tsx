@@ -1,0 +1,4 @@
+import { Text } from "react-native";
+import { useStore } from "../src/store";
+import { Card,C,Screen,Title } from "../src/ui";
+export default function Analytics(){const {sites}=useStore();const wards=[...new Set(sites.map(s=>s.ward))];return <Screen><Title>Ward Analytics</Title><Text style={{color:C.muted}}>Priority indicators from current survey records.</Text>{wards.map(w=>{const x=sites.filter(s=>s.ward===w);const avg=Math.round(x.reduce((a,b)=>a+b.priorityScore,0)/x.length);return <Card key={w}><Text style={{fontWeight:"800",fontSize:17}}>{w}</Text><Text>{x.length} surveyed site{x.length>1?"s":""} · average priority {avg}</Text><Text style={{color:C.muted,marginTop:4}}>{x.filter(s=>s.priority==="CRITICAL"||s.priority==="HIGH").length} high/critical sites</Text></Card>})}</Screen>}
